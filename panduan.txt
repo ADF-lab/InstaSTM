@@ -1,0 +1,41 @@
+clone
+composer install
+npm install
+npm run dev
+buat database
+cp .env.example .env
+ganti db_database sesuai database yg dibuat
+php artisan key:generate
+php artisan migrate
+php artisan db:seed
+php artisan voyager:install
+php artisan voyager:admin admin@admin.com
+
+-- login --
+username: admin
+password: password
+
+masuk ke halaman admin
+klik tools, masuk ke halaman database
+klik add BREAD pada account, posts, comments, reports
+pada model name isi dengan App\Models\(sesuai database tadi)
+klik create a relationship jika terdapat relation dengan tabel lain
+klik submit
+
+tabel pun sudah dapat diakses di sidebar
+
+masuk ke halaman roles
+klik edit di row admin
+jangan ceklis add di posts, comments, reports
+
+untuk mengatur urutan di sidebar, klik tools, masuk ke halaman menu builder
+klik builder di row admin
+lalu seret yg ingin dipindahkan ke tempat yg diinginkan
+jika ingin membuat folder seperti tools, klik new menu item
+isi titlenya
+biarkan isian yg lain kosong
+jika ingin memakai simbol, isi di font icon dengan melihat list simbol yg dapat dipakai di voyager font class
+
+untuk mengganti title halaman admin, masuk ke halaman settings dari sidebar
+lalu klik admin
+lalu ganti isian yg diinginkan
