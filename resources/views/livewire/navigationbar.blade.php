@@ -5,7 +5,7 @@
 
 	<div class="w-full bg-blue-900 flex justify-between shadow py-2 px-4 md:px-24 lg:px-36 place-self-center">
 		<div class="place-self-center z-10">
-			<a href="{{route('home')}}" class="font-logo text-white text-2xl flex hover:text-yellow-500 transition duration-200 select-none">
+			<a href="{{route('home')}}" class="font-logo text-gray-100 text-2xl flex hover:text-white transition duration-200 select-none">
 				<img src="{{asset('storage/profile-photos/logo-stm.png')}}" class="h-8 pr-2 md:block hidden"> INSTASTM
 			</a>
 		</div>
@@ -56,7 +56,7 @@
 	                {{ __('Edit Profil') }}
 	            </x-jet-dropdown-link>
 
-	            @if($admin->role_id=1)
+	            @if($admin)
 	            <x-jet-dropdown-link class="cursor-pointer" wire:click="admin">
 	                {{ __('Halaman Admin') }}
 	            </x-jet-dropdown-link>

@@ -8,10 +8,13 @@ use Illuminate\Support\Facades\DB;
 
 class Navigationbar extends Component
 {
-	public $search,$searchuser,$searchmodal,$admin;
+	public $search,$searchuser,$searchmodal,$admin=false;
     public function render()
     {
-    	$this->admin=DB::table('users')->where('username',Auth()->User()->username)->get();
+    	$admin=DB::table('users')->where('username',Auth()->User()->username)->first();
+    	if($admin->role_id==1){
+    		$this->admin=true;
+    	}
     	//search bar
         if ($this->searchuser!='') {
             $this->search=DB::table('users')->where('username','LIKE',$this->searchuser.'%')->get();

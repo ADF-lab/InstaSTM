@@ -22,14 +22,14 @@
 							<div class="text-lg">
 								@foreach($user as $us)
 									@if($follow->id_user == $us->id)
-										by <a href="{{route('user',['slug'=>$us->username])}}" class="italic text-yellow-500 hover:text-yellow-600 transition duration-200 ease-in-out">{{$us->username}}</a>
+										by <a href="{{route('user',['slug'=>$us->username])}}" class="italic text-blue-500 hover:text-blue-600 transition duration-200 ease-in-out">{{$us->username}}</a>
 									@endif
 								@endforeach
 							</div>
 						</div>
 					</div>
 					<div class="absolute inset-x-0 px-12 bottom-0 text-center md:text-right pt-8 md:p-4">
-			            <a href="{{route('postpage',['slug'=>$follow->id])}}" class="place-self-center w-24 italic text-yellow-500 hover:text-yellow-600 transition duration-200 ease-in-out">See Full--</a>
+			            <a href="{{route('postpage',['slug'=>$follow->id])}}" class="place-self-center w-24 italic text-blue-500 hover:text-blue-600 transition duration-200 ease-in-out">See Full--</a>
 					</div>
 
 				</div>
