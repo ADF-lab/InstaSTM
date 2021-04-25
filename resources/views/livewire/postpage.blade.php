@@ -1,8 +1,8 @@
 <div>
 
-	<div class="grid lg:grid-cols-6 bg-white shadow-lg rounded-md my-6 mx-8 lg:mx-24">
+	<div class="grid lg:grid-cols-6 bg-white my-6 mx-8 lg:mx-24">
     	<div class="lg:col-span-4">
-    		<div class="flex-initial place-self-center bg-gray-50">
+    		<div class="flex-initial place-self-center">
                 <img src="{{ asset('storage/img/post/'.$nama_foto)}}" id="photo" class="m-auto" style="max-height: 600px">
             </div>
     	</div>
@@ -25,7 +25,7 @@
 	            <div class="w-full my-1 flex justify-between h-8">
 	                <div class="flex place-self-center">
 	                    <a wire:click="like" class="cursor-pointer">
-	                        <svg class=" fill-current @if($liketrue) text-yellow-500 hover:text-yellow-600 @else hover:text-gray-800 @endif hover:text-yellow-500 transition duration-200" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="24px" x="0px" y="0px" viewBox="0 0 412.735 412.735" style="enable-background:new 0 0 412.735 412.735;" xml:space="preserve">
+	                        <svg class=" fill-current @if($liketrue) text-blue-500 hover:text-blue-600 @else hover:text-blue-800 @endif hover:text-blue-500 transition duration-200" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" height="24px" x="0px" y="0px" viewBox="0 0 412.735 412.735" style="enable-background:new 0 0 412.735 412.735;" xml:space="preserve">
 								<path d="M295.706,35.522C295.706,35.522,295.706,35.522,295.706,35.522c-34.43-0.184-67.161,14.937-89.339,41.273
 								c-22.039-26.516-54.861-41.68-89.339-41.273C52.395,35.522,0,87.917,0,152.55C0,263.31,193.306,371.456,201.143,375.636
 								c3.162,2.113,7.286,2.113,10.449,0c7.837-4.18,201.143-110.759,201.143-223.086C412.735,87.917,360.339,35.522,295.706,35.522z"/>
@@ -77,7 +77,7 @@
 	            <!-- tempat ngomen -->
 	              <div class="flex items-center border border-gray-500 mt-1 z-10">
 	                <input wire:model="comment" class="appearance-none border-none w-full text-gray-700 px-2 leading-tight focus:outline-none" type="text" placeholder="tambahkan komentar">
-	                <button class="border-l border-gray-500 hover:bg-gray-200 text-gray-500 hover:text-gray-800 text-sm py-1 px-2" type="button" wire:click=tambahcomment>
+	                <button class="font-open font-bold text-blue-500 hover:text-blue-600 text-sm py-1 px-2" type="button" wire:click=tambahcomment>
 	                  Kirim
 	                </button>
 	              </div>

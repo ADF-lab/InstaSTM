@@ -3,19 +3,21 @@
     	@include('livewire.search')
     @endif
 
-	<div class="w-full bg-white flex justify-between shadow py-2 px-4 md:px-24 lg:px-36 place-self-center">
+	<div class="w-full bg-blue-900 flex justify-between shadow py-2 px-4 md:px-24 lg:px-36 place-self-center">
 		<div class="place-self-center z-10">
-			<a href="{{route('home')}}" class="font-logo text-2xl hover:text-yellow-500 transition duration-200 select-none">INSTASTM</a>
+			<a href="{{route('home')}}" class="font-logo text-white text-2xl flex hover:text-yellow-500 transition duration-200 select-none">
+				<img src="{{asset('storage/profile-photos/logo-stm.png')}}" class="h-8 pr-2 md:block hidden"> INSTASTM
+			</a>
 		</div>
 
 		<div class="absolute inset-x-0 justify-center flex place-self-center">
-			<svg class="h-4 cursor-pointer md:hidden fill-current text-yellow-500" viewBox="0 0 512.005 512.005" style="enable-background:new 0 0 512.005 512.005;" xml:space="preserve">
+			<svg class="h-4 cursor-pointer md:hidden fill-current text-white" viewBox="0 0 512.005 512.005" style="enable-background:new 0 0 512.005 512.005;" xml:space="preserve">
 			<path d="M505.749,475.587l-145.6-145.6c28.203-34.837,45.184-79.104,45.184-127.317c0-111.744-90.923-202.667-202.667-202.667
 				S0,90.925,0,202.669s90.923,202.667,202.667,202.667c48.213,0,92.48-16.981,127.317-45.184l145.6,145.6
 				c4.16,4.16,9.621,6.251,15.083,6.251s10.923-2.091,15.083-6.251C514.091,497.411,514.091,483.928,505.749,475.587z
 				 M202.667,362.669c-88.235,0-160-71.765-160-160s71.765-160,160-160s160,71.765,160,160S290.901,362.669,202.667,362.669z"/>
 			</svg>
-			<div class="w-3/12 md:w-2/6 xl:w-3/6 focus-within:text-yellow-500 hidden md:flex">
+			<div class="w-3/12 md:w-2/6 xl:w-3/6 focus-within:text-blue-500 hidden md:flex">
 				<input class="rounded-lg py-0 w-full placeholder-gray-400 text-black text-xs h-7 focus:outline-none focus:border-transparent focus:ring-black" type="text" placeholder="Cari Pengguna Lain.." wire:model="searchuser"/>
 				<svg class="inline-block h-4 -ml-6 mt-1.5 fill-current group-focus:text-yellow-500" viewBox="0 0 512.005 512.005" style="enable-background:new 0 0 512.005 512.005;" xml:space="preserve">
 				<path d="M505.749,475.587l-145.6-145.6c28.203-34.837,45.184-79.104,45.184-127.317c0-111.744-90.923-202.667-202.667-202.667
@@ -51,8 +53,14 @@
 	            </div>
 
 	            <x-jet-dropdown-link href="{{ route('profile.show') }}">
-	                {{ __('Profile') }}
+	                {{ __('Edit Profil') }}
 	            </x-jet-dropdown-link>
+
+	            @if($admin->role_id=1)
+	            <x-jet-dropdown-link class="cursor-pointer" wire:click="admin">
+	                {{ __('Halaman Admin') }}
+	            </x-jet-dropdown-link>
+	            @endif
 				<div class="border-t border-gray-100"></div>
 
 	            <!-- Authentication -->

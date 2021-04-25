@@ -17,20 +17,31 @@
 		    <!-- username&bio -->
 		    <div class="flex flex-col mt-3">
 		        <div class="flex flex-col md:flex-row space-y-1 md:space-y-0 md:space-x-4 text-center align-center">
-		            <div class="font-semibold text-gray-800 text-3xl">{{ $username }}</div>
+		            <div class="font-semibold lowercase text-gray-800 text-3xl">{{ $username }}</div>
 		            @if($other)
-	                    <button class="border flex px-4 place-self-center font-semibold rounded border-black hover:bg-black group hover:text-white @if($followed) bg-black text-white border-none @endif transition duration-200" wire:click="follow">
-	                        <svg class="@if($followed) hidden @endif transition duration-200 h-3 place-self-center pr-2 fill-current text-black group-hover:text-white" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 455 455" style="enable-background:new 0 0 455 455; " xml:space="preserve">
+	                    <button class="flex px-4 place-self-center font-semibold rounded bg-blue-500 hover:bg-blue-600 group text-white @if($followed) bg-blue-500 text-white border-none @endif transition duration-200" wire:click="follow">
+	                        <svg class="@if($followed) hidden @endif transition duration-200 h-3 place-self-center pr-2 fill-current text-white " xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 455 455" style="enable-background:new 0 0 455 455; " xml:space="preserve">
 	                            <polygon points="455,212.5 242.5,212.5 242.5,0 212.5,0 212.5,212.5 0,212.5 0,242.5 212.5,242.5 212.5,455 242.5,455 242.5,242.5 
 	                                455,242.5 "/>
 	                        </svg>@if($followed) FOLLOWED @else FOLLOW @endif
 	                    </button>
-		            @endif
+	                @else
+	                	<a class="flex px-4 place-self-center font-semibold rounded border border-gray-500 text-gray-500 hover:text-black hover:border-black transition duration-200 uppercase" href="{{ route('profile.show') }}">
+	                        edit Profil
+	                    </a>
+                    @endif
 		        </div>
 		        <!-- following followed -->
-		        <div class="flex space-x-16 w-full items-center py-4 justify-center md:justify-start">
-		            <span class="font-bold text-2xl mr-2">{{$mengikuti}}</span> MENGIKUTI
-		            <span class="font-bold text-2xl pr-2">{{$diikuti}}</span> DIIKUTI
+		        <div class="flex w-full items-center py-4 justify-center md:justify-start lowercase text-xl">
+		            <div class="px-4 border-r">
+		            	<span class="font-bold text-blue-500 text-2xl pr-2">{{$kiriman}}</span> kiriman
+		            </div>
+		            <div class="px-4 border-r">
+		            	<span class="font-bold text-blue-500 text-2xl pr-2">{{$mengikuti}}</span> MENGIKUTI
+		            </div>
+		            <div class="px-4">
+		            	<span class="font-bold text-blue-500 text-2xl pr-2">{{$diikuti}}</span> DIIKUTI
+		            </div>
 		        </div>
 		        <!-- bio ceritanya -->
 		        <div class="font-normal text-gray-500 text-base xl:text-lg">

@@ -16,7 +16,7 @@ class Otheruser extends Component
 {
 	use WithFileUploads;
 	Public $slug,$profile,$searchuser,$search;
-	Public $followed=true,$other,$mengikuti,$diikuti;
+	Public $followed=true,$other,$mengikuti,$diikuti,$kiriman;
 	public $caption=' ', $image, $imageName, $id_user,$id_post,$isModal;
 
 	public function mount($slug){
@@ -35,6 +35,7 @@ class Otheruser extends Component
 
     	$this->diikuti=DB::table('friends')->where('id_user', $id_user)->count();
     	$this->mengikuti=DB::table('friends')->where('following', $id_user)->count();
+    	$this->kiriman=DB::table('posts')->where('id_user', $id_user)->count();
     	if($username!=Auth()->User()->username){
     		$this->other=true;
     	}else{ $this->other=false; }

@@ -3,14 +3,15 @@
 namespace App\Http\Livewire;
 
 use Livewire\Component;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 
 class Navigationbar extends Component
 {
-	public $search,$searchuser,$searchmodal;
+	public $search,$searchuser,$searchmodal,$admin;
     public function render()
     {
-    	
+    	$this->admin=DB::table('users')->where('username',Auth()->User()->username)->get();
     	//search bar
         if ($this->searchuser!='') {
             $this->search=DB::table('users')->where('username','LIKE',$this->searchuser.'%')->get();
@@ -37,5 +38,9 @@ class Navigationbar extends Component
     public function resetFields()
     {
         $this->searchuser = '';
+    }
+    public function admin()
+    {
+    	return redirect('/admin');
     }
 }
