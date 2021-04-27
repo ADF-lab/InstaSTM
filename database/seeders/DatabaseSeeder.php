@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
             'username'       => 'admin',
             'name'       => 'Admin',
             'nisn'           => '1',
+            'role_id'		=>'1',
             'email'          => 'admin@admin.com',
             'password'       => bcrypt('password'),
             'remember_token' => Str::random(60),

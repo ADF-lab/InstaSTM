@@ -16,7 +16,7 @@ class CreateFriendsTable extends Migration
         Schema::create('friends', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('id_user');
-            $table->string('following');
+            $table->unsignedBigInteger('following');
             $table->timestamps();
         });
     }

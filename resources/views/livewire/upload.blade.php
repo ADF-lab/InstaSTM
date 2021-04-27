@@ -42,10 +42,10 @@
                     <textarea wire:model="caption" name="caption" placeholder="Dilarang keras menggunakan kata kata kasar dan mengandung SARA!" class="scroll-hide w-full border border-gray-400 px-3 py-2 text-gray-700 border rounded-lg focus:ring-0 resize-none" rows="5"></textarea>
                 </div>
             
-                <button type="submit" class="w-full rounded-lg py-2 shadow-inner bg-black text-white hover:bg-gray-900 focus:outline-none transition ease-in-out duration-150">
+                <button type="submit" class="w-full rounded-lg py-2 shadow-inner bg-blue-500 text-white hover:bg-blue-600 focus:outline-none transition ease-in-out duration-150">
                 Post
                 </button>
-                <button wire:click="closeModal" class="w-8 h-8 rounded-full absolute shadow-inner -top-3 -right-3 bg-red-500 text-white hover:bg-red-600 focus:outline-none transition ease-in-out duration-150">X</button>
+                <button wire:click="closeModal" class="w-8 h-8 rounded-full absolute shadow-inner -top-3 -right-3 bg-gray-800 text-white hover:bg-black focus:outline-none transition ease-in-out duration-150">X</button>
             </div>
     
                 </div>

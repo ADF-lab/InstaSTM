@@ -80,7 +80,7 @@ return [
 
     'database' => [
         'tables' => [
-            'hidden' => ['migrations', 'data_rows', 'data_types', 'menu_items', 'password_resets', 'permission_role', 'settings'],
+            'hidden' => ['migrations', 'data_rows', 'data_types', 'menu_items', 'password_resets', 'permission_role', 'settings','failed_jobs','personal_access_tokens','sessions','translations','user_roles','permissions'],
         ],
         'autoload_migrations' => true,
     ],
@@ -135,7 +135,7 @@ return [
             'voyager::generic.home' => [
                 'route'        => '/',
                 'icon_class'   => 'voyager-home',
-                'target_blank' => true,
+                'target_blank' => false,
             ],
             'voyager::generic.logout' => [
                 'route'      => 'voyager.logout',
@@ -183,7 +183,7 @@ return [
     |
     */
 
-    'primary_color' => '#22A7F0',
+    'primary_color' => '#1e3a8a',
 
     'show_dev_tips' => true, // Show development tip "How To Use:" in Menu and Settings
 

@@ -59,7 +59,11 @@
 		        				<div class="absolute right-0">
 									<x-jet-dropdown>
 										<x-slot name="trigger">
-											<img src="/img/more.svg" class="h-5 cursor-pointer ">
+											<svg class="fill-current text-black cursor-pointer h-5" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512;" xml:space="preserve">
+												<circle cx="256" cy="256" r="27"/>
+												<circle cx="27" cy="256" r="27"/>
+												<circle cx="485" cy="256" r="27"/>
+									</svg>
 										</x-slot>
 										<x-slot name="content">
 				                                <button type="button" class="bg-red-500 hover:bg-red-600 w-full h-8 text-white text-left pl-3 rounded" wire:click="hapus({{$comment->id}})">
@@ -77,7 +81,7 @@
 	            <!-- tempat ngomen -->
 	              <div class="flex items-center border border-gray-500 mt-1 z-10">
 	                <input wire:model="comment" class="appearance-none border-none w-full text-gray-700 px-2 leading-tight focus:outline-none" type="text" placeholder="tambahkan komentar">
-	                <button class="font-open font-bold text-blue-500 hover:text-blue-600 text-sm py-1 px-2" type="button" wire:click=tambahcomment>
+	                <button class="font-bold text-blue-500 hover:text-blue-600 text-sm py-1 px-2" type="button" wire:click=tambahcomment>
 	                  Kirim
 	                </button>
 	              </div>
